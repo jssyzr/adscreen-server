@@ -25,6 +25,8 @@ class AdscreenServerApplicationTests {
 
     @Test
     void getUserInfoByUserID(){
+
+        log.info("cm11");
         UserInfo userInfo = userService.getUserInfoByUserID("admin");
         log.info(userInfo.toString());
     }
