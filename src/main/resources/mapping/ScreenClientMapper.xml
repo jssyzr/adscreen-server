@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haitaiinc.adscreenserver.mapper.ScreenClientMapper">
+
+    <resultMap id="BaseResultMap" type="com.haitaiinc.adscreenserver.entity.ScreenClient">
+        <result column="client_id" jdbcType="VARCHAR" property="clientId" />
+        <result column="client_ip_address" jdbcType="VARCHAR" property="clientIpAddress" />
+        <result column="client_desc" jdbcType="VARCHAR" property="clientDesc" />
+        <result column="client_page" jdbcType="VARCHAR" property="clientPage" />
+        <result column="flag" jdbcType="VARCHAR" property="flag" />
+    </resultMap>
+
+    <select id="getScreenClientByIP" resultMap="BaseResultMap">
+        select * from screen_client where ip_address = #{ipAddress}
+    </select>
+
+</mapper>
